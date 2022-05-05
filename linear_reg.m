@@ -23,7 +23,7 @@ endfor
 % CALCULATE a0 & a1
 % n*a0 + sum_x*a1 = sum_y
 % sum_x*a0 + sum_x2*a1 = sum_xy
-A = [n sum_x sum_y; sum_x sum_x2 sum_xy]
-solution = rref(A)
+A = [n sum_x sum_y; sum_x sum_x2 sum_xy];
+solution = rref(A);
 a0 = solution(1,3)
 a1 = solution(2,3)
