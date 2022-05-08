@@ -27,3 +27,15 @@ A = [n sum_x sum_y; sum_x sum_x2 sum_xy];
 solution = rref(A);
 a0 = solution(1,3)
 a1 = solution(2,3)
+
+% CALCULATE S_R, S_T, R^2 & R
+s_r = 0;
+s_t = 0;
+for i = 1:1:n
+  s_r = s_r + (y(i)-a0-a1*x(i))^2;
+  s_t = s_t + (y(i)-(sum_y/n))^2;
+endfor
+s_r
+s_t
+r2 = (s_t - s_r)/s_t
+r = sqrt(r2)
