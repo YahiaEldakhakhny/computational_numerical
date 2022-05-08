@@ -17,7 +17,7 @@ for i = 1:1:n
   sum_y = sum_y + y(i);
   sum_x2 = sum_x2 + x(i)^2;
   sum_xy = sum_xy + x(i)*y(i);
-endfor
+end
 
 % y = a0 + a1*x
 % CALCULATE a0 & a1
@@ -34,7 +34,7 @@ s_t = 0;
 for i = 1:1:n
   s_r = s_r + (y(i)-a0-a1*x(i))^2;
   s_t = s_t + (y(i)-(sum_y/n))^2;
-endfor
+end
 s_r
 s_t
 r2 = (s_t - s_r)/s_t
