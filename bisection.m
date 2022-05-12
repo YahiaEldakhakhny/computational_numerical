@@ -1,9 +1,8 @@
-x = linspace(0, 7, 1000);
-y = sin(x);
-
 n = input("enter number of iterations: ");
 a = input("enter the start: ");
 b = input("enter the end: ");
+x = linspace(a, b, 1000);
+y = x.^2-1;
 a_i = find_i(x, a);
 b_i = find_i(x, b);
 mid = (a+b)/2;
@@ -33,6 +32,9 @@ for i = 1:1:n
         mid = (a+b)/2;
         mid_i = find_i(x, mid);
         out = mid;
+    else
+        fprintf("There are no roots between %d and %d\n", a, b);
+        break
     end
 end
 
