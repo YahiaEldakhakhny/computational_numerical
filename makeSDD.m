@@ -1,23 +1,22 @@
 % Function to rearrange a matrix to make it strictly diagonally dominant 
-function [A, i] = makeSDD(x)
-    A = [];
-       i=1;
-    [r,c] = size(x);
+function A = makeSDD(x)
+A = x;    
+[r,c] = size(x);
     if r ~= c
-        A = -1;
         error('A is not square');
     end
     
-    [maxrow,maxind] = max(abs(x),[],2); % maxrow = values of max elements of each row, maxind is their indicies
+    % maxrow = values of max elements of each row, maxind is their indicies
+    [maxrow,maxind] = max(abs(x),[],2); 
  
-   
+    % make sure the matrix can be turned into a SDD matrix
     if all(maxrow > (sum(abs(x),2) - maxrow)) && isequal(sort(maxind),(1:numel(maxind))')
-A(maxind,:) = x;
-%         for k= maxind'
-%             A(i)=x(k);
-%             i=i+1;
-%         end
-        
+        for i = 1:1:length(maxind)
+            A(i, :) = x(maxind(i), :);
+        end
+    else
+        disp('Sorry, but this matrix can never be made to be diagonally dominant')
+        A =x;
     end
 
 end
