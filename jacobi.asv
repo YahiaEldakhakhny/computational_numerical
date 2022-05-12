@@ -1,9 +1,0 @@
-% prompt the user to enter the coefficient matrix
-A = input("enter the augmented coefficient matrix: ");
-%
-r = size(A,1);
-
-
-for i = 1:1:length(n)-1
-    
-end
