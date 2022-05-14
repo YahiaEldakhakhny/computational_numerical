@@ -13,7 +13,7 @@ elseif n == 2
 elseif n > 2 && mod(n,2) == 1
     n = input("Number of segments must be even: ");
 elseif n > 2
-    h = (b-a)/n
+    h = (b-a)/n;
     pts = a:h:b;
     for j = 0:1:n
         if j == 0
