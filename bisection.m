@@ -47,8 +47,3 @@ end
 % Output
 disp(out);
 
-figure
-plot(x,y)
-grid
-
-
