@@ -14,7 +14,7 @@ if A1 == zeros(r,c)
     % warn the user that the solution may not converge
     res = input("This matrix cannot be strictly diagonally dominat do you want to continue anyway [Y/n]: ");
     if res ~= 'n'
-       x = compute_jacobi(A1)
+       x = compute_jacobi(A)
     end
 else
     x = compute_jacobi(A1)
