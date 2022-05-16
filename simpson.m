@@ -31,11 +31,10 @@ elseif n > 2
     x = a:h:b;
     y = f(x);
     % j starts at 1 so I shifted the rule by 1
-    for j = 1:1:n
-        if j == 1
+
+    for j = 1:1:length(y)
+        if j == 1 || j == length(y)
             I = I+y(j);
-        elseif j == n
-            I == I+y(n+1);
         % odd indicies are multiplied by 2 because I started j at 1
         elseif mod(j,2) == 1
             I = I + 2*y(j);
@@ -44,6 +43,8 @@ elseif n > 2
             I = I + 4*y(j);
         endif
     endfor
+
     I = I*(h/3);
 end
 disp(I);
+%disp(y);
