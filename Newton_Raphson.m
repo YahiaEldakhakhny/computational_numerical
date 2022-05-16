@@ -1,16 +1,11 @@
 
 %Entering the function
-n = input ('The order = ');
-Z = ones(1, n+1);    % A row vector of length (n+1) shall carry the coefficients of each term
 y = 0;
 syms x
+str = input('Give an equation in x: ','s')  ;
+f = str2func(['@(x)',(str)]) ;
+y = f(x);
 
- for j = length(Z):-1:1
-                Z(j) = input (['Coefficent for x^' num2str(j-1) '= ']); 
-                %At each loop, the user enters the coeff of each term, starting with the highest power.
-                temp = Z(j).*x^(j-1);
-                y = y + temp;
- end
 y
 fplot(y,[-6 6]);
 grid on
