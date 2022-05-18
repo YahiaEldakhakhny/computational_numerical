@@ -18,25 +18,18 @@ y(1) = input("enter the starting value of y here ");  % the initial y value
 n = numel(y);  % the number of y values
 
 % The loop to solve the DE
-for i=1:n-1
+for i=1:1:n-1
     dy(i)=f(x(i),y(i));
     y(i+1) = y(i) + h *dy(i) ;
 end
 
-
 figure
 scatter(x,y);
 plot(x,y);
-    
-for i=1:n-1
+
+for i= 1:1:n
     txt=['y = ',num2str(y(i)),' at x = ',num2str(x(i)),'.'];
    disp(txt);
 end
 
 
-
-
-
-% function f=f(x,y)
-%     f = y*x^3 -1.5*y;
-% end
