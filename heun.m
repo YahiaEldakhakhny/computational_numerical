@@ -31,16 +31,9 @@ end
 figure
 scatter(x,y);
 plot(x,y);
-    
+
 for i=1:n
     txt=['y = ',num2str(y(i)),' at x = ',num2str(x(i)),'.'];
    disp(txt);
 end
 
-
-
-
-
-% function f=f(x,y)
-%     f = y*x^3 -1.5*y;
-% end
