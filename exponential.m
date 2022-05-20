@@ -9,4 +9,8 @@ end
 %j = [1.98, 0.6, 0.25, 0.1, 0.027, 0.011];
 k = log (j);
 b = 0 ; d =0;
-[b, d] = linear_reg_fun(i,k);
+% coefficients of linearized model
+[a0, a1] = linear_reg_fun(i,k);
+% coefficients of y = a*e^(bx)
+a = exp(a0)
+b = a1
